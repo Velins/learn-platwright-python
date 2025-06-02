@@ -2,7 +2,6 @@ from playwright.sync_api import expect
 
 USERNAME_FIELD = '#user-name'
 PASSWORD_FIELD = '#password'
-BUTTON_LOGIN_NAME = 'Login'
 
 class LoginPage:
 
@@ -19,4 +18,4 @@ class LoginPage:
         self.page.locator(PASSWORD_FIELD).fill(password)
 
     def click_login_button(self):
-        self.page.get_by_role('button', name=BUTTON_LOGIN_NAME).click()
+        self.page.locator('#login-button').click()
